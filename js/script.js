@@ -43,4 +43,15 @@ const card = {
     }
 };
 
-console.log(card);
+const cardSection = document.getElementById("cards");
+
+const cardTemplate = `
+<ul class='card'>
+<li><strong>ID</strong>: ${card.id}</li>
+<li><strong>Nome</strong>: ${card.name}</li>
+<li><strong>Costo di lancio</strong>: ${card.launchCost.join(", ")}</li>
+<li><strong>Costo mana convertito</strong>: ${card.combinedManaCost}</li>
+</ul>
+`;
+
+cardSection.innerHTML = cardTemplate;
