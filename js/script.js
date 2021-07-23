@@ -217,3 +217,37 @@ selectField.addEventListener("change", () => {
         inputField.classList.add("hidden");
     }
 });
+
+button.addEventListener("click", () => {
+    const inputValue = inputField.value;
+    const selectValue = selectField.value;
+    if (selectValue === "all") {
+        renderDeck(fullDeck, cardSection);
+        return;
+    }
+
+    //Array filtro
+    const filteredDeck = [];
+
+    for(let i = 0; i < fullDeck.length; i++) {
+        const currentCard = fullDeck[i];
+        switch (selectValue) {
+            case "id": 
+            case "combinedManaCost": 
+            case "collectionNr": 
+            case "constitution": 
+            case "strength": 
+            if(currentCard[selectValue] == inputValue){
+                filteredDeck.push(currentCard);
+            }
+            break;
+            default: 
+            if(currentCard[selectValue].includes(inputValue)){
+                filteredDeck.push(currentCard);
+            }
+        }
+    }
+
+    //Stampa elementi filtrati
+    renderDeck(filteredDeck, cardSection);
+});
