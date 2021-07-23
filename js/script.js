@@ -198,7 +198,22 @@ const renderDeck = (deck, targetElement) => {
     targetElement.innerHTML = deckTemplate;
 };
 
-
 //Stampo in pagina
 const cardSection = document.getElementById("cards");
 renderDeck(fullDeck, cardSection);
+
+//Filtro
+
+const inputField = document.getElementById("search");
+const selectField = document.getElementById("filter");
+const button = document.getElementById("button");
+
+//Nascondi/mostra input
+selectField.addEventListener("change", () => {
+    const currentValue = selectField.value;
+    if (currentValue !== "all") {
+        inputField.classList.remove("hidden");
+    } else {
+        inputField.classList.add("hidden");
+    }
+});
