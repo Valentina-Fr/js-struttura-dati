@@ -133,9 +133,10 @@ const fullDeck = [
     }
 ];
 
-console.log(fullDeck);
+//Funzioni
 
-/* const createCardTemplate = (card) => {
+//Funzione per stampare una card
+const createCardTemplate = (card) => {
     //Verifico se il sottotipo è presente
     const subType = card.subType ? `- ${card.subType}` : "";
     
@@ -185,8 +186,19 @@ console.log(fullDeck);
     </li>
     `;
     return cardTemplate;
-}
+};
+
+//Funzione per stampare card deck
+const renderDeck = (deck, targetElement) => {
+    let deckTemplate = "";
+    for (let i = 0; i < deck.length; i++){
+        const currentCard = deck[i];
+        deckTemplate += createCardTemplate(currentCard);
+    }
+    targetElement.innerHTML = deckTemplate;
+};
+
 
 //Stampo in pagina
 const cardSection = document.getElementById("cards");
-cardSection.innerHTML = createCardTemplate(card); */
+renderDeck(fullDeck, cardSection);
