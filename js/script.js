@@ -1,4 +1,5 @@
-const card = {
+const fullDeck = [
+    {
     id: 1,
     name: "Bloodfire Colossus",
     launchCost: ["6", "R", "R"],
@@ -41,9 +42,100 @@ const card = {
         color: "red",
         source: "img/image.png"
     }
-};
+    },
+    {
+    id: 2,
+    name: "Grizzly Bears",
+    launchCost: ["1", "G"],
+    combinedManaCost: 2,
+    cardType: "Creature",
+    subType: "Bear",
+    expansion: {
+        name: "7th Expansion",
+        reissueId: 7,
+        rarity: "Silver",
+        collectionNr: 5,
+        totalCards: 52
+    },
+    flavorText: {
+        quote: "They've got claws as long as your arm. And they're grouchy. Really, really grouchy.",
+        author: "Greg Staples"
+    },
+    abilities: [
+        {
+            launchCost: ["W", "B"],
+            description: "Il Colosso Sangue di Fuoco infligge 6 danni a ogni creatura e a ogni giocatore."
+        },
+        {
+            launchCost: ["W", "B"],
+            description: "Bloodfire Colossus deals 6 damage to each creature and each player."
+        }
+    ],
+    illustration: {
+        author: {
+        id: 1,
+        name: "John Smith" 
+        },
+        source: "img/bears.png"
+    },
+    collectionNr: "14/23",
+    constitution: 4,
+    strength: 4,
+    borderColor: "#000",
+    background: {
+        color: "black",
+        source: "img/grizzly.png"
+    }
+    },
+    {
+    id: 3,
+    name: "Anaba Shaman",
+    launchCost: ["3", "R"],
+    combinedManaCost: 4,
+    cardType: "Creature",
+    subType: "Minotaur",
+    expansion: {
+        name: "9th Expansion",
+        reissueId: 9,
+        rarity: "Golden",
+        collectionNr: 48,
+        totalCards: 142
+    },
+    flavorText: {
+        quote: "Prova a prendere questo toro per le corna.",
+        author: "Greg Staples"
+    },
+    abilities: [
+        {
+            launchCost: ["R", "B"],
+            description: "Il Colosso Sangue di Fuoco infligge 6 danni a ogni creatura e a ogni giocatore."
+        },
+        {
+            launchCost: ["W", "B"],
+            description: "Bloodfire Colossus deals 6 damage to each creature and each player."
+        }
+    ],
+    illustration: {
+        author: {
+        id: 1,
+        name: "John Smith" 
+        },
+        source: "img/shaman.png"
+    },
+    collectionNr: "48/142",
+    constitution: 3,
+    strength: 5,
+    borderColor: "#000",
+    background: {
+        color: "red",
+        source: "img/minotaur.png"
+    }
+    }
+];
 
-const createCardTemplate = (card) => {
+console.log(fullDeck);
+
+/* const createCardTemplate = (card) => {
     //Verifico se il sottotipo è presente
     const subType = card.subType ? `- ${card.subType}` : "";
     
@@ -97,4 +189,4 @@ const createCardTemplate = (card) => {
 
 //Stampo in pagina
 const cardSection = document.getElementById("cards");
-cardSection.innerHTML = createCardTemplate(card);
+cardSection.innerHTML = createCardTemplate(card); */
