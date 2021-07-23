@@ -7,6 +7,20 @@
     <title>Js Struttura Dati</title>
 </head>
 <body>
+    <select id="filter">
+        <option selected value="all">Tutti</option>
+        <option value="id">Id</option>
+        <option value="name">Nome</option>
+        <option value="combinedManaCost">Mana combinato</option>
+        <option value="cardType">Tipo carta</option>
+        <option value="subType">Sottotipo</option>
+        <option value="collectionNr">Sottotipo</option>
+        <option value="constitution">Costituzione</option>
+        <option value="strength">Forza</option>
+    </select>
+    <input type="search" id="search" placeholder="Ricerca" class="hidden">
+    <button id="button">Filtra</button>
+    <hr>
     <section>
         <ul id="cards"></ul>
     </section>
